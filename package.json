@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "scripts": {
     "dev": "nodemon app.js",
     "start": "node app.js",
@@ -9,8 +8,6 @@
   },
   "main": "app.js",
   "dependencies": {
-    "config": "^3.0.1",
-    "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "express": "^4.16.3",
     "mongodb": "^3.3.0-beta2"

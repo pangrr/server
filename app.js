@@ -10,11 +10,15 @@ const url = 'mongodb://localhost:27017';
 const dbname = 'test';
 let collection;
 
-MongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
-  console.log('mongodb is connected');
-  collection = client.db(dbname).collection('users');
-
-  app.listen(port, () => console.log(`server is listening on port ${port}`));
+MongoClient.connect(url, { useNewUrlParser: true }, (error, client) => {
+  if (error) {
+    console.error('cannot connect to mongodb');
+  } else {
+    console.log('mongodb is connected');
+    collection = client.db(dbname).collection('users');
+  
+    app.listen(port, () => console.log(`server is listening on port ${port}`));
+  }
 });
 
 // APIs
